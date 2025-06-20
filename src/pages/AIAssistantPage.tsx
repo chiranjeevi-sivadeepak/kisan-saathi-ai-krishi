@@ -78,7 +78,7 @@ const AIAssistantPage = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="p-0">
-              <AIAssistant />
+              <AIAssistant language="english" />
             </CardContent>
           </Card>
         </div>
