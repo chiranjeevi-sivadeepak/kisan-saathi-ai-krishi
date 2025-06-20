@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -13,6 +12,7 @@ import PestDetection from '@/components/PestDetection';
 import WaterManagement from '@/components/WaterManagement';
 import CommunityForum from '@/components/CommunityForum';
 import FarmingRoadmap from '@/components/FarmingRoadmap';
+import IndiaMapDashboard from '@/components/IndiaMapDashboard';
 
 const Index = () => {
   const [selectedLanguage, setSelectedLanguage] = useState('english');
@@ -92,6 +92,7 @@ const Index = () => {
 
   const quickActionItems = [
     { key: 'aiAssistant', icon: MessageCircle, label: currentLang.aiAssistant, color: 'bg-green-500' },
+    { key: 'mapDashboard', icon: Map, label: 'India Map Dashboard', color: 'bg-purple-500' },
     { key: 'cropRecommendation', icon: Leaf, label: currentLang.cropRecommendation, color: 'bg-emerald-500' },
     { key: 'waterManagement', icon: Droplets, label: currentLang.waterManagement, color: 'bg-blue-500' },
     { key: 'pestDetection', icon: Bug, label: currentLang.pestDetection, color: 'bg-orange-500' },
@@ -105,6 +106,8 @@ const Index = () => {
     switch (activeView) {
       case 'aiAssistant':
         return <AIAssistant language={selectedLanguage} />;
+      case 'mapDashboard':
+        return <IndiaMapDashboard />;
       case 'cropRecommendation':
         return <CropRecommendation language={selectedLanguage} />;
       case 'waterManagement':
