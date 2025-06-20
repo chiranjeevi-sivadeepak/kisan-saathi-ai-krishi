@@ -71,7 +71,8 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ language }) => {
     }
   };
 
-  const currentLang = translations[language];
+  // Add fallback to ensure currentLang is never undefined
+  const currentLang = translations[language as keyof typeof translations] || translations.english;
 
   useEffect(() => {
     // Initialize with a welcome message
@@ -172,7 +173,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ language }) => {
       ]
     };
 
-    const langResponses = responses[language] || responses.english;
+    const langResponses = responses[language as keyof typeof responses] || responses.english;
     return langResponses[Math.floor(Math.random() * langResponses.length)];
   };
 
