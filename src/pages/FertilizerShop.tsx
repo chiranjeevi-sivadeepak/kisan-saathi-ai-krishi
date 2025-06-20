@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { supabase } from '@/integrations/supabase/client';
 import { useCartStore } from '@/store/cartStore';
 import { toast } from '@/components/ui/use-toast';
-import { Search, ShoppingCart, Tag, Leaf, AlertCircle, CheckCircle } from 'lucide-react';
+import { Search, ShoppingCart, Tag, Leaf, AlertCircle, CheckCircle, Store } from 'lucide-react';
 import { Tables } from '@/integrations/supabase/types';
 
 type Fertilizer = Tables<'fertilizers'>;
