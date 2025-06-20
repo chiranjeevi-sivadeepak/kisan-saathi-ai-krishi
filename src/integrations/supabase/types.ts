@@ -9,7 +9,275 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      cart_items: {
+        Row: {
+          created_at: string | null
+          fertilizer_id: string | null
+          id: string
+          quantity: number
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          fertilizer_id?: string | null
+          id?: string
+          quantity?: number
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          fertilizer_id?: string | null
+          id?: string
+          quantity?: number
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "cart_items_fertilizer_id_fkey"
+            columns: ["fertilizer_id"]
+            isOneToOne: false
+            referencedRelation: "fertilizers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      crop_history: {
+        Row: {
+          created_at: string | null
+          crop_name: string
+          id: string
+          investment: number | null
+          land_area: number | null
+          market_price: number | null
+          profit_loss: number | null
+          season: string | null
+          user_id: string | null
+          year: number | null
+          yield_amount: number | null
+        }
+        Insert: {
+          created_at?: string | null
+          crop_name: string
+          id?: string
+          investment?: number | null
+          land_area?: number | null
+          market_price?: number | null
+          profit_loss?: number | null
+          season?: string | null
+          user_id?: string | null
+          year?: number | null
+          yield_amount?: number | null
+        }
+        Update: {
+          created_at?: string | null
+          crop_name?: string
+          id?: string
+          investment?: number | null
+          land_area?: number | null
+          market_price?: number | null
+          profit_loss?: number | null
+          season?: string | null
+          user_id?: string | null
+          year?: number | null
+          yield_amount?: number | null
+        }
+        Relationships: []
+      }
+      fertilizers: {
+        Row: {
+          category: string
+          created_at: string | null
+          description: string | null
+          discount_percentage: number | null
+          donts: string[] | null
+          dos: string[] | null
+          id: string
+          image_url: string | null
+          name: string
+          price: number
+          season: string | null
+          suitable_crops: string[] | null
+        }
+        Insert: {
+          category: string
+          created_at?: string | null
+          description?: string | null
+          discount_percentage?: number | null
+          donts?: string[] | null
+          dos?: string[] | null
+          id?: string
+          image_url?: string | null
+          name: string
+          price: number
+          season?: string | null
+          suitable_crops?: string[] | null
+        }
+        Update: {
+          category?: string
+          created_at?: string | null
+          description?: string | null
+          discount_percentage?: number | null
+          donts?: string[] | null
+          dos?: string[] | null
+          id?: string
+          image_url?: string | null
+          name?: string
+          price?: number
+          season?: string | null
+          suitable_crops?: string[] | null
+        }
+        Relationships: []
+      }
+      news: {
+        Row: {
+          category: string | null
+          content: string
+          created_at: string | null
+          id: string
+          image_url: string | null
+          language: string | null
+          location: string | null
+          published_at: string | null
+          source: string | null
+          title: string
+        }
+        Insert: {
+          category?: string | null
+          content: string
+          created_at?: string | null
+          id?: string
+          image_url?: string | null
+          language?: string | null
+          location?: string | null
+          published_at?: string | null
+          source?: string | null
+          title: string
+        }
+        Update: {
+          category?: string | null
+          content?: string
+          created_at?: string | null
+          id?: string
+          image_url?: string | null
+          language?: string | null
+          location?: string | null
+          published_at?: string | null
+          source?: string | null
+          title?: string
+        }
+        Relationships: []
+      }
+      orders: {
+        Row: {
+          created_at: string | null
+          id: string
+          order_items: Json | null
+          status: string | null
+          total_amount: number
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          order_items?: Json | null
+          status?: string | null
+          total_amount: number
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          order_items?: Json | null
+          status?: string | null
+          total_amount?: number
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      podcasts: {
+        Row: {
+          audio_url: string
+          created_at: string | null
+          description: string | null
+          duration: number | null
+          guest_name: string | null
+          guest_role: string | null
+          id: string
+          language: string | null
+          title: string
+          transcript: string | null
+        }
+        Insert: {
+          audio_url: string
+          created_at?: string | null
+          description?: string | null
+          duration?: number | null
+          guest_name?: string | null
+          guest_role?: string | null
+          id?: string
+          language?: string | null
+          title: string
+          transcript?: string | null
+        }
+        Update: {
+          audio_url?: string
+          created_at?: string | null
+          description?: string | null
+          duration?: number | null
+          guest_name?: string | null
+          guest_role?: string | null
+          id?: string
+          language?: string | null
+          title?: string
+          transcript?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          aadhar_number: string | null
+          aadhar_verified: boolean | null
+          budget: number | null
+          created_at: string | null
+          current_crop: string | null
+          first_name: string
+          id: string
+          last_name: string
+          location: string | null
+          phone: string | null
+          total_land: number | null
+          updated_at: string | null
+        }
+        Insert: {
+          aadhar_number?: string | null
+          aadhar_verified?: boolean | null
+          budget?: number | null
+          created_at?: string | null
+          current_crop?: string | null
+          first_name: string
+          id: string
+          last_name: string
+          location?: string | null
+          phone?: string | null
+          total_land?: number | null
+          updated_at?: string | null
+        }
+        Update: {
+          aadhar_number?: string | null
+          aadhar_verified?: boolean | null
+          budget?: number | null
+          created_at?: string | null
+          current_crop?: string | null
+          first_name?: string
+          id?: string
+          last_name?: string
+          location?: string | null
+          phone?: string | null
+          total_land?: number | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
