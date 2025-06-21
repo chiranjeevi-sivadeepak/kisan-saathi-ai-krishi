@@ -245,6 +245,7 @@ export type Database = {
           last_name: string
           location: string | null
           phone: string | null
+          phone_verified: boolean | null
           total_land: number | null
           updated_at: string | null
         }
@@ -259,6 +260,7 @@ export type Database = {
           last_name: string
           location?: string | null
           phone?: string | null
+          phone_verified?: boolean | null
           total_land?: number | null
           updated_at?: string | null
         }
@@ -273,6 +275,7 @@ export type Database = {
           last_name?: string
           location?: string | null
           phone?: string | null
+          phone_verified?: boolean | null
           total_land?: number | null
           updated_at?: string | null
         }
