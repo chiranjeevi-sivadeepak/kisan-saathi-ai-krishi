@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -28,10 +29,10 @@ const Navbar = () => {
   const translations = {
     english: {
       home: "Home",
-      aiAssistant: "AI Assistant", 
-      cropRecommendation: "Crop Recommendations",
-      pestDetection: "Pest Detection",
-      fertilizerShop: "Fertilizer Shop",
+      aiAssistant: "AI Chat", 
+      cropRecommendation: "Crops",
+      pestDetection: "Pest ID",
+      fertilizerShop: "Shop",
       contact: "Contact",
       profile: "Profile",
       signOut: "Sign Out",
@@ -40,10 +41,10 @@ const Navbar = () => {
     },
     hindi: {
       home: "होम",
-      aiAssistant: "AI सहायक",
-      cropRecommendation: "फसल सिफारिशें",
-      pestDetection: "कीट पहचान",
-      fertilizerShop: "उर्वरक दुकान",
+      aiAssistant: "AI चैट",
+      cropRecommendation: "फसल",
+      pestDetection: "कीट",
+      fertilizerShop: "दुकान",
       contact: "संपर्क",
       profile: "प्रोफाइल",
       signOut: "साइन आउट",
@@ -52,11 +53,11 @@ const Navbar = () => {
     },
     telugu: {
       home: "హోమ్",
-      aiAssistant: "AI అసిస్టెంట్",
-      cropRecommendation: "పంట సిఫార్సులు",
-      pestDetection: "కీటకాల గుర్తింపు",
-      fertilizerShop: "ఎరువుల దుకాణం",
-      contact: "సంప్రదించండి",
+      aiAssistant: "AI చాట్",
+      cropRecommendation: "పంటలు",
+      pestDetection: "కీటకాలు",
+      fertilizerShop: "దుకాణం",
+      contact: "సంప్రదించు",
       profile: "ప్రొఫైల్",
       signOut: "సైన్ అవుట్",
       signIn: "సైన్ ఇన్",

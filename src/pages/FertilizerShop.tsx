@@ -8,8 +8,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { supabase } from '@/integrations/supabase/client';
 import { useCartStore } from '@/store/cartStore';
 import { toast } from '@/components/ui/use-toast';
-import { Search, ShoppingCart, Tag, Leaf, AlertCircle, CheckCircle, Store } from 'lucide-react';
+import { Search, ShoppingCart, Tag, Leaf, AlertCircle, CheckCircle, Store, ArrowRight } from 'lucide-react';
 import { Tables } from '@/integrations/supabase/types';
+import { Link } from 'react-router-dom';
 
 type Fertilizer = Tables<'fertilizers'>;
 
@@ -261,13 +262,20 @@ const FertilizerShop = () => {
                     )}
                   </div>
                   
-                  <Button 
-                    onClick={() => handleAddToCart(fertilizer)}
-                    className="bg-green-600 hover:bg-green-700"
-                  >
-                    <ShoppingCart className="w-4 h-4 mr-2" />
-                    Add to Cart
-                  </Button>
+                  <div className="flex items-center gap-2">
+                    <Button 
+                      onClick={() => handleAddToCart(fertilizer)}
+                      className="bg-green-600 hover:bg-green-700"
+                    >
+                      <ShoppingCart className="w-4 h-4 mr-2" />
+                      Add to Cart
+                    </Button>
+                    <Link to="/cart">
+                      <Button variant="outline" size="sm" className="p-2">
+                        <ArrowRight className="w-4 h-4" />
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </CardContent>
             </Card>

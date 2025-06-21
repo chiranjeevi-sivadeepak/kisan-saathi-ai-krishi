@@ -81,33 +81,18 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Background Image with Dark Overlay */}
+      {/* Background Image with Dark Overlay - no green colors */}
       <div 
         className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat animate-fade-in"
         style={{
           backgroundImage: `url('/lovable-uploads/fdafe80a-9b5b-4d70-adc6-27b0f4f21a9e.png')`
         }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/70"></div>
       </div>
 
-      {/* Get Started Section - Moved to Top */}
-      <section className="bg-gradient-to-r from-green-600/90 to-green-700/90 backdrop-blur-sm text-white py-12 animate-fade-in">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-6 animate-scale-in">{currentLang.getStarted}</h2>
-          <p className="text-xl mb-8 opacity-90 animate-fade-in">
-            {currentLang.getStartedDesc}
-          </p>
-          <Link to="/auth?mode=signup">
-            <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300 animate-scale-in">
-              {currentLang.getStarted}
-            </Button>
-          </Link>
-        </div>
-      </section>
-
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-600/90 to-green-700/90 backdrop-blur-sm text-white py-16 animate-fade-in">
+      <section className="bg-black/40 backdrop-blur-sm text-white py-16 animate-fade-in">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-scale-in">
             🌾 {currentLang.hero}
@@ -120,13 +105,13 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
             <Link to="/ai-assistant">
-              <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 transform hover:scale-105 transition-all duration-300">
+              <Button size="lg" className="bg-white text-black hover:bg-gray-100 px-8 py-3 transform hover:scale-105 transition-all duration-300">
                 <Bot className="mr-2 h-5 w-5" />
                 {currentLang.tryAI}
               </Button>
             </Link>
             <Link to="/fertilizer-shop">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600 px-8 py-3 transform hover:scale-105 transition-all duration-300">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black px-8 py-3 transform hover:scale-105 transition-all duration-300">
                 <Store className="mr-2 h-5 w-5" />
                 {currentLang.shopFertilizers}
               </Button>
@@ -154,20 +139,20 @@ const Index = () => {
             </Link>
 
             <Link to="/crop-recommendations" className="animate-scale-in">
-              <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer border-0 bg-gradient-to-br from-green-50/90 to-green-100/90 backdrop-blur-sm h-full transform hover:scale-105">
+              <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer border-0 bg-gradient-to-br from-orange-50/90 to-orange-100/90 backdrop-blur-sm h-full transform hover:scale-105">
                 <CardHeader className="text-center">
-                  <Leaf className="w-12 h-12 mx-auto text-green-600 mb-4" />
-                  <CardTitle className="text-green-800">{currentLang.cropRecommendations}</CardTitle>
+                  <Leaf className="w-12 h-12 mx-auto text-orange-600 mb-4" />
+                  <CardTitle className="text-orange-800">{currentLang.cropRecommendations}</CardTitle>
                   <CardDescription>{currentLang.cropDesc}</CardDescription>
                 </CardHeader>
               </Card>
             </Link>
 
             <Link to="/pest-detection" className="animate-scale-in">
-              <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer border-0 bg-gradient-to-br from-orange-50/90 to-orange-100/90 backdrop-blur-sm h-full transform hover:scale-105">
+              <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer border-0 bg-gradient-to-br from-red-50/90 to-red-100/90 backdrop-blur-sm h-full transform hover:scale-105">
                 <CardHeader className="text-center">
-                  <Search className="w-12 h-12 mx-auto text-orange-600 mb-4" />
-                  <CardTitle className="text-orange-800">{currentLang.pestDetection}</CardTitle>
+                  <Search className="w-12 h-12 mx-auto text-red-600 mb-4" />
+                  <CardTitle className="text-red-800">{currentLang.pestDetection}</CardTitle>
                   <CardDescription>{currentLang.pestDesc}</CardDescription>
                 </CardHeader>
               </Card>
