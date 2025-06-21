@@ -35,8 +35,7 @@ const Index = () => {
       pestDesc: "Upload plant images for instant pest identification",
       fertilizerShop: "Fertilizer Shop",
       fertilizerDesc: "Browse and buy quality fertilizers for your crops",
-      exploreIndia: "Explore Farming Across India",
-      readyToTransform: "Ready to Transform Your Farming?"
+      exploreIndia: "Explore Farming Across India"
     },
     hindi: {
       getStarted: "आज ही शुरू करें",
@@ -55,8 +54,7 @@ const Index = () => {
       pestDesc: "तत्काल कीट पहचान के लिए पौधे की छवियां अपलोड करें",
       fertilizerShop: "उर्वरक दुकान",
       fertilizerDesc: "अपनी फसलों के लिए गुणवत्तापूर्ण उर्वरक ब्राउज़ करें और खरीदें",
-      exploreIndia: "पूरे भारत में कृषि की खोज करें",
-      readyToTransform: "अपनी खेती को बदलने के लिए तैयार हैं?"
+      exploreIndia: "पूरे भारत में कृषि की खोज करें"
     },
     telugu: {
       getStarted: "ఈరోజే ప్రారంభించండి",
@@ -75,24 +73,33 @@ const Index = () => {
       pestDesc: "తక్షణ కీటకాల గుర్తింపు కోసం మొక్కల చిత్రాలను అప్‌లోడ్ చేయండి",
       fertilizerShop: "ఎరువుల దుకాణం",
       fertilizerDesc: "మీ పంటలకు నాణ్యమైన ఎరువులను బ్రౌజ్ చేసి కొనుక్కోండి",
-      exploreIndia: "భారతదేశంలో వ్యవసాయాన్ని అన్వేషించండి",
-      readyToTransform: "మీ వ్యవసాయాన్ని మార్చడానికి సిద్ధంగా ఉన్నారా?"
+      exploreIndia: "భారతదేశంలో వ్యవసాయాన్ని అన్వేషించండి"
     }
   };
 
   const currentLang = translations[language as keyof typeof translations] || translations.english;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100">
+    <div className="min-h-screen">
+      {/* Background Image with Dark Overlay */}
+      <div 
+        className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat animate-fade-in"
+        style={{
+          backgroundImage: `url('/lovable-uploads/fdafe80a-9b5b-4d70-adc6-27b0f4f21a9e.png')`
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
+
       {/* Get Started Section - Moved to Top */}
-      <section className="bg-gradient-to-r from-green-600 to-green-700 text-white py-12">
+      <section className="bg-gradient-to-r from-green-600/90 to-green-700/90 backdrop-blur-sm text-white py-12 animate-fade-in">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-6">{currentLang.getStarted}</h2>
-          <p className="text-xl mb-8 opacity-90">
+          <h2 className="text-3xl font-bold mb-6 animate-scale-in">{currentLang.getStarted}</h2>
+          <p className="text-xl mb-8 opacity-90 animate-fade-in">
             {currentLang.getStartedDesc}
           </p>
           <Link to="/auth?mode=signup">
-            <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4 text-lg">
+            <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300 animate-scale-in">
               {currentLang.getStarted}
             </Button>
           </Link>
@@ -100,26 +107,26 @@ const Index = () => {
       </section>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-600 to-green-700 text-white py-16">
+      <section className="bg-gradient-to-r from-green-600/90 to-green-700/90 backdrop-blur-sm text-white py-16 animate-fade-in">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-scale-in">
             🌾 {currentLang.hero}
           </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90">
+          <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in">
             {currentLang.heroDesc}
           </p>
-          <p className="text-lg mb-8 opacity-80 max-w-3xl mx-auto">
+          <p className="text-lg mb-8 opacity-80 max-w-3xl mx-auto animate-fade-in">
             {currentLang.heroSubDesc}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
             <Link to="/ai-assistant">
-              <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3">
+              <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 transform hover:scale-105 transition-all duration-300">
                 <Bot className="mr-2 h-5 w-5" />
                 {currentLang.tryAI}
               </Button>
             </Link>
             <Link to="/fertilizer-shop">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600 px-8 py-3">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600 px-8 py-3 transform hover:scale-105 transition-all duration-300">
                 <Store className="mr-2 h-5 w-5" />
                 {currentLang.shopFertilizers}
               </Button>
@@ -129,15 +136,15 @@ const Index = () => {
       </section>
 
       {/* Quick Access Cards */}
-      <section className="py-12">
+      <section className="py-12 bg-black/20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-3xl font-bold text-center mb-12 text-white animate-fade-in">
             {currentLang.smartFarming}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <Link to="/ai-assistant">
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer border-0 bg-gradient-to-br from-blue-50 to-blue-100 h-full">
+            <Link to="/ai-assistant" className="animate-scale-in">
+              <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer border-0 bg-gradient-to-br from-blue-50/90 to-blue-100/90 backdrop-blur-sm h-full transform hover:scale-105">
                 <CardHeader className="text-center">
                   <Bot className="w-12 h-12 mx-auto text-blue-600 mb-4" />
                   <CardTitle className="text-blue-800">{currentLang.aiAssistant}</CardTitle>
@@ -146,8 +153,8 @@ const Index = () => {
               </Card>
             </Link>
 
-            <Link to="/crop-recommendations">
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer border-0 bg-gradient-to-br from-green-50 to-green-100 h-full">
+            <Link to="/crop-recommendations" className="animate-scale-in">
+              <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer border-0 bg-gradient-to-br from-green-50/90 to-green-100/90 backdrop-blur-sm h-full transform hover:scale-105">
                 <CardHeader className="text-center">
                   <Leaf className="w-12 h-12 mx-auto text-green-600 mb-4" />
                   <CardTitle className="text-green-800">{currentLang.cropRecommendations}</CardTitle>
@@ -156,8 +163,8 @@ const Index = () => {
               </Card>
             </Link>
 
-            <Link to="/pest-detection">
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer border-0 bg-gradient-to-br from-orange-50 to-orange-100 h-full">
+            <Link to="/pest-detection" className="animate-scale-in">
+              <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer border-0 bg-gradient-to-br from-orange-50/90 to-orange-100/90 backdrop-blur-sm h-full transform hover:scale-105">
                 <CardHeader className="text-center">
                   <Search className="w-12 h-12 mx-auto text-orange-600 mb-4" />
                   <CardTitle className="text-orange-800">{currentLang.pestDetection}</CardTitle>
@@ -166,8 +173,8 @@ const Index = () => {
               </Card>
             </Link>
 
-            <Link to="/fertilizer-shop">
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer border-0 bg-gradient-to-br from-purple-50 to-purple-100 h-full">
+            <Link to="/fertilizer-shop" className="animate-scale-in">
+              <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer border-0 bg-gradient-to-br from-purple-50/90 to-purple-100/90 backdrop-blur-sm h-full transform hover:scale-105">
                 <CardHeader className="text-center">
                   <Store className="w-12 h-12 mx-auto text-purple-600 mb-4" />
                   <CardTitle className="text-purple-800">{currentLang.fertilizerShop}</CardTitle>
@@ -180,50 +187,39 @@ const Index = () => {
       </section>
 
       {/* Interactive India Map */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-white/10 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
+          <h2 className="text-3xl font-bold text-center mb-8 text-white animate-fade-in">
             <MapPin className="inline-block mr-2 h-8 w-8" />
             {currentLang.exploreIndia}
           </h2>
-          <IndiaMapDashboard />
+          <div className="animate-scale-in">
+            <IndiaMapDashboard />
+          </div>
         </div>
       </section>
 
       {/* Dashboard Components Grid */}
-      <section className="py-12">
+      <section className="py-12 bg-black/20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 animate-fade-in">
             <WeatherCard language={language} />
             <MarketPrices language={language} />
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 animate-fade-in">
             <CropRecommendation language={language} />
             <PestDetection language={language} />
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 animate-fade-in">
             <WaterManagement language={language} />
             <FarmingRoadmap language={language} />
           </div>
           
-          <CommunityForum language={language} />
-        </div>
-      </section>
-
-      {/* Final Call to Action */}
-      <section className="bg-gradient-to-r from-green-600 to-green-700 text-white py-16">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-6">{currentLang.readyToTransform}</h2>
-          <p className="text-xl mb-8 opacity-90">
-            {currentLang.getStartedDesc}
-          </p>
-          <Link to="/auth?mode=signup">
-            <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3">
-              {currentLang.getStarted}
-            </Button>
-          </Link>
+          <div className="animate-fade-in">
+            <CommunityForum language={language} />
+          </div>
         </div>
       </section>
     </div>

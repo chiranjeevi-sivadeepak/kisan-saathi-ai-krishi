@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -68,7 +67,7 @@ const Navbar = () => {
   const currentLang = translations[language as keyof typeof translations] || translations.english;
 
   return (
-    <nav className="bg-gradient-to-r from-green-600 to-green-700 text-white shadow-xl sticky top-0 z-50">
+    <nav className="bg-transparent backdrop-blur-md text-white shadow-xl sticky top-0 z-50 border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -143,7 +142,7 @@ const Navbar = () => {
             ) : (
               <div className="flex space-x-2">
                 <Link to="/auth">
-                  <Button variant="outline" size="sm" className="text-green-600 border-white hover:bg-white">
+                  <Button variant="outline" size="sm" className="text-white border-white hover:bg-white hover:text-green-600">
                     {currentLang.signIn}
                   </Button>
                 </Link>
@@ -171,7 +170,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-green-700 py-4 space-y-4">
+          <div className="lg:hidden bg-black/80 backdrop-blur-md py-4 space-y-4 border-t border-white/10">
             <div className="flex flex-col space-y-4 px-4">
               <LanguageSwitcher />
               
@@ -272,7 +271,7 @@ const Navbar = () => {
                     to="/auth"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <Button variant="outline" size="sm" className="w-full text-green-600 border-white hover:bg-white">
+                    <Button variant="outline" size="sm" className="w-full text-white border-white hover:bg-white hover:text-green-600">
                       {currentLang.signIn}
                     </Button>
                   </Link>
