@@ -68,14 +68,14 @@ const Navbar = () => {
   const currentLang = translations[language as keyof typeof translations] || translations.english;
 
   return (
-    <nav className="bg-transparent backdrop-blur-md text-white shadow-xl sticky top-0 z-50 border-b border-white/10">
+    <nav className="bg-black/80 backdrop-blur-md text-white shadow-xl sticky top-0 z-50 border-b border-white/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Link to="/" className="flex items-center space-x-2 text-xl font-bold text-white hover:text-green-200 transition-colors">
+            <Link to="/" className="flex items-center space-x-2 text-xl font-bold text-white hover:text-yellow-400 transition-colors">
               <div className="bg-white p-2 rounded-full">
-                <Leaf className="h-6 w-6 text-green-600" />
+                <Leaf className="h-6 w-6 text-yellow-600" />
               </div>
               <span>AgriPlatform</span>
             </Link>
@@ -83,27 +83,27 @@ const Navbar = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6">
-            <Link to="/" className="flex items-center space-x-1 hover:text-green-200 transition-colors">
+            <Link to="/" className="flex items-center space-x-1 text-white hover:text-yellow-400 transition-colors font-medium">
               <Home className="w-4 h-4" />
               <span>{currentLang.home}</span>
             </Link>
-            <Link to="/ai-assistant" className="flex items-center space-x-1 hover:text-green-200 transition-colors">
+            <Link to="/ai-assistant" className="flex items-center space-x-1 text-white hover:text-yellow-400 transition-colors font-medium">
               <Bot className="w-4 h-4" />
               <span>{currentLang.aiAssistant}</span>
             </Link>
-            <Link to="/crop-recommendations" className="flex items-center space-x-1 hover:text-green-200 transition-colors">
+            <Link to="/crop-recommendations" className="flex items-center space-x-1 text-white hover:text-yellow-400 transition-colors font-medium">
               <Leaf className="w-4 h-4" />
               <span>{currentLang.cropRecommendation}</span>
             </Link>
-            <Link to="/pest-detection" className="flex items-center space-x-1 hover:text-green-200 transition-colors">
+            <Link to="/pest-detection" className="flex items-center space-x-1 text-white hover:text-yellow-400 transition-colors font-medium">
               <span>🔍</span>
               <span>{currentLang.pestDetection}</span>
             </Link>
-            <Link to="/fertilizer-shop" className="flex items-center space-x-1 hover:text-green-200 transition-colors">
+            <Link to="/fertilizer-shop" className="flex items-center space-x-1 text-white hover:text-yellow-400 transition-colors font-medium">
               <Store className="w-4 h-4" />
               <span>{currentLang.fertilizerShop}</span>
             </Link>
-            <Link to="/contact" className="hover:text-green-200 transition-colors">
+            <Link to="/contact" className="text-white hover:text-yellow-400 transition-colors font-medium">
               {currentLang.contact}
             </Link>
           </div>
@@ -115,7 +115,7 @@ const Navbar = () => {
             {user ? (
               <>
                 <Link to="/cart" className="relative">
-                  <Button variant="ghost" size="sm" className="text-white hover:text-green-200">
+                  <Button variant="ghost" size="sm" className="text-white hover:text-yellow-400 hover:bg-white/10">
                     <ShoppingCart className="w-5 h-5" />
                     {cartItemsCount > 0 && (
                       <Badge className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 min-w-[1.25rem] h-5 flex items-center justify-center rounded-full">
@@ -125,7 +125,7 @@ const Navbar = () => {
                   </Button>
                 </Link>
                 <Link to="/profile">
-                  <Button variant="ghost" size="sm" className="text-white hover:text-green-200">
+                  <Button variant="ghost" size="sm" className="text-white hover:text-yellow-400 hover:bg-white/10">
                     <User className="w-5 h-5" />
                     <span className="ml-1">{currentLang.profile}</span>
                   </Button>
@@ -134,7 +134,7 @@ const Navbar = () => {
                   variant="ghost" 
                   size="sm" 
                   onClick={handleSignOut}
-                  className="text-white hover:text-green-200"
+                  className="text-white hover:text-yellow-400 hover:bg-white/10"
                 >
                   <LogOut className="w-4 h-4" />
                   <span className="ml-1">{currentLang.signOut}</span>
@@ -143,12 +143,12 @@ const Navbar = () => {
             ) : (
               <div className="flex space-x-2">
                 <Link to="/auth">
-                  <Button variant="outline" size="sm" className="text-white border-white hover:bg-white hover:text-green-600">
+                  <Button variant="outline" size="sm" className="text-white border-white hover:bg-white hover:text-black">
                     {currentLang.signIn}
                   </Button>
                 </Link>
                 <Link to="/auth?mode=signup">
-                  <Button size="sm" className="bg-white text-green-600 hover:bg-green-50">
+                  <Button size="sm" className="bg-yellow-600 text-black hover:bg-yellow-500">
                     {currentLang.signUp}
                   </Button>
                 </Link>
@@ -162,7 +162,7 @@ const Navbar = () => {
               variant="ghost"
               size="sm"
               onClick={toggleMobileMenu}
-              className="text-white hover:text-green-200"
+              className="text-white hover:text-yellow-400 hover:bg-white/10"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -171,13 +171,13 @@ const Navbar = () => {
 
         {/* Mobile Navigation Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-black/80 backdrop-blur-md py-4 space-y-4 border-t border-white/10">
+          <div className="lg:hidden bg-black/90 backdrop-blur-md py-4 space-y-4 border-t border-white/20">
             <div className="flex flex-col space-y-4 px-4">
               <LanguageSwitcher />
               
               <Link 
                 to="/" 
-                className="flex items-center space-x-2 hover:text-green-200 transition-colors py-2"
+                className="flex items-center space-x-2 text-white hover:text-yellow-400 transition-colors py-2 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Home className="w-4 h-4" />
@@ -186,7 +186,7 @@ const Navbar = () => {
               
               <Link 
                 to="/ai-assistant" 
-                className="flex items-center space-x-2 hover:text-green-200 transition-colors py-2"
+                className="flex items-center space-x-2 text-white hover:text-yellow-400 transition-colors py-2 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Bot className="w-4 h-4" />
@@ -195,7 +195,7 @@ const Navbar = () => {
               
               <Link 
                 to="/crop-recommendations" 
-                className="flex items-center space-x-2 hover:text-green-200 transition-colors py-2"
+                className="flex items-center space-x-2 text-white hover:text-yellow-400 transition-colors py-2 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Leaf className="w-4 h-4" />
@@ -204,7 +204,7 @@ const Navbar = () => {
               
               <Link 
                 to="/pest-detection" 
-                className="flex items-center space-x-2 hover:text-green-200 transition-colors py-2"
+                className="flex items-center space-x-2 text-white hover:text-yellow-400 transition-colors py-2 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <span>🔍</span>
@@ -213,7 +213,7 @@ const Navbar = () => {
               
               <Link 
                 to="/fertilizer-shop" 
-                className="flex items-center space-x-2 hover:text-green-200 transition-colors py-2"
+                className="flex items-center space-x-2 text-white hover:text-yellow-400 transition-colors py-2 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Store className="w-4 h-4" />
@@ -222,7 +222,7 @@ const Navbar = () => {
               
               <Link 
                 to="/contact" 
-                className="hover:text-green-200 transition-colors py-2"
+                className="text-white hover:text-yellow-400 transition-colors py-2 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {currentLang.contact}
@@ -232,7 +232,7 @@ const Navbar = () => {
                 <>
                   <Link 
                     to="/cart" 
-                    className="flex items-center space-x-2 hover:text-green-200 transition-colors py-2"
+                    className="flex items-center space-x-2 text-white hover:text-yellow-400 transition-colors py-2 font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <ShoppingCart className="w-5 h-5" />
@@ -246,7 +246,7 @@ const Navbar = () => {
                   
                   <Link 
                     to="/profile" 
-                    className="flex items-center space-x-2 hover:text-green-200 transition-colors py-2"
+                    className="flex items-center space-x-2 text-white hover:text-yellow-400 transition-colors py-2 font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <User className="w-5 h-5" />
@@ -260,7 +260,7 @@ const Navbar = () => {
                       handleSignOut();
                       setIsMobileMenuOpen(false);
                     }}
-                    className="text-white hover:text-green-200 justify-start p-0"
+                    className="text-white hover:text-yellow-400 hover:bg-white/10 justify-start p-0"
                   >
                     <LogOut className="w-4 h-4 mr-2" />
                     <span>{currentLang.signOut}</span>
@@ -272,7 +272,7 @@ const Navbar = () => {
                     to="/auth"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <Button variant="outline" size="sm" className="w-full text-white border-white hover:bg-white hover:text-green-600">
+                    <Button variant="outline" size="sm" className="w-full text-white border-white hover:bg-white hover:text-black">
                       {currentLang.signIn}
                     </Button>
                   </Link>
@@ -280,7 +280,7 @@ const Navbar = () => {
                     to="/auth?mode=signup"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <Button size="sm" className="w-full bg-white text-green-600 hover:bg-green-50">
+                    <Button size="sm" className="w-full bg-yellow-600 text-black hover:bg-yellow-500">
                       {currentLang.signUp}
                     </Button>
                   </Link>

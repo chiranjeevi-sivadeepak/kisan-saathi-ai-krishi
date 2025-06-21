@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Bot, Store, Leaf, Search, MapPin, TrendingUp, Droplets, Calendar } from 'lucide-react';
+import { Bot, Store, Leaf, Search, MapPin, TrendingUp, Droplets, Calendar, Users, Award, Shield } from 'lucide-react';
 import WeatherCard from '@/components/WeatherCard';
 import MarketPrices from '@/components/MarketPrices';
 import CropRecommendation from '@/components/CropRecommendation';
@@ -19,8 +19,6 @@ const Index = () => {
 
   const translations = {
     english: {
-      getStarted: "Get Started Today",
-      getStartedDesc: "Join thousands of farmers who are already using AgriPlatform to increase their yields and profits.",
       hero: "Welcome to AgriPlatform",
       heroDesc: "Your Complete Digital Farming Companion",
       heroSubDesc: "Empowering Indian farmers with AI-driven insights, smart crop recommendations, weather forecasting, an integrated fertilizer marketplace, and comprehensive farm management tools.",
@@ -35,11 +33,22 @@ const Index = () => {
       pestDesc: "Upload plant images for instant pest identification",
       fertilizerShop: "Fertilizer Shop",
       fertilizerDesc: "Browse and buy quality fertilizers for your crops",
-      exploreIndia: "Explore Farming Across India"
+      exploreIndia: "Explore Farming Across India",
+      aboutUs: "About AgriPlatform",
+      aboutDesc: "Transforming Indian Agriculture Through Technology",
+      missionTitle: "Our Mission",
+      missionDesc: "To empower farmers with cutting-edge technology, making agriculture more sustainable, profitable, and efficient across India.",
+      visionTitle: "Our Vision",
+      visionDesc: "Creating a digitally connected farming ecosystem where every farmer has access to smart agricultural solutions.",
+      whyChooseTitle: "Why Choose AgriPlatform?",
+      aiPowered: "AI-Powered Solutions",
+      aiPoweredDesc: "Advanced machine learning algorithms provide personalized recommendations",
+      trusted: "Trusted by Thousands",
+      trustedDesc: "Over 10,000+ farmers trust our platform for their agricultural needs",
+      support: "24/7 Expert Support",
+      supportDesc: "Round-the-clock assistance from agricultural experts and technicians"
     },
     hindi: {
-      getStarted: "आज ही शुरू करें",
-      getStartedDesc: "हजारों किसानों के साथ जुड़ें जो पहले से ही AgriPlatform का उपयोग करके अपनी उपज और मुनाफे में वृद्धि कर रहे हैं।",
       hero: "AgriPlatform में आपका स्वागत है",
       heroDesc: "आपका संपूर्ण डिजिटल कृषि साथी",
       heroSubDesc: "भारतीय किसानों को AI-संचालित अंतर्दृष्टि, स्मार्ट फसल सिफारिशों, मौसम पूर्वानुमान, एक एकीकृत उर्वरक बाज़ार और व्यापक कृषि प्रबंधन उपकरणों के साथ सशक्त बनाना।",
@@ -54,11 +63,22 @@ const Index = () => {
       pestDesc: "तत्काल कीट पहचान के लिए पौधे की छवियां अपलोड करें",
       fertilizerShop: "उर्वरक दुकान",
       fertilizerDesc: "अपनी फसलों के लिए गुणवत्तापूर्ण उर्वरक ब्राउज़ करें और खरीदें",
-      exploreIndia: "पूरे भारत में कृषि की खोज करें"
+      exploreIndia: "पूरे भारत में कृषि की खोज करें",
+      aboutUs: "AgriPlatform के बारे में",
+      aboutDesc: "प्रौद्योगिकी के माध्यम से भारतीय कृषि का रूपांतरण",
+      missionTitle: "हमारा मिशन",
+      missionDesc: "किसानों को अत्याधुनिक प्रौद्योगिकी से सशक्त बनाना, कृषि को अधिक टिकाऊ, लाभदायक और कुशल बनाना।",
+      visionTitle: "हमारी दृष्टि",
+      visionDesc: "एक डिजिटल रूप से जुड़ा कृषि पारिस्थितिकी तंत्र बनाना जहां हर किसान के पास स्मार्ट कृषि समाधान तक पहुंच हो।",
+      whyChooseTitle: "AgriPlatform क्यों चुनें?",
+      aiPowered: "AI-संचालित समाधान",
+      aiPoweredDesc: "उन्नत मशीन लर्निंग एल्गोरिदम व्यक्तिगत सिफारिशें प्रदान करते हैं",
+      trusted: "हजारों द्वारा भरोसेमंद",
+      trustedDesc: "10,000+ से अधिक किसान अपनी कृषि आवश्यकताओं के लिए हमारे प्लेटफॉर्म पर भरोसा करते हैं",
+      support: "24/7 विशेषज्ञ सहायता",
+      supportDesc: "कृषि विशेषज्ञों और तकनीशियनों से चौबीसों घंटे सहायता"
     },
     telugu: {
-      getStarted: "ఈరోజే ప్రారంభించండి",
-      getStartedDesc: "AgriPlatform ఉపయోగించి వారి దిగుబడులు మరియు లాభాలను పెంచుకుంటున్న వేలాది మంది రైతులతో చేరండి।",
       hero: "AgriPlatform కు స్వాగతం",
       heroDesc: "మీ పూర్తి డిజిటల్ వ్యవసాయ సహచరుడు",
       heroSubDesc: "భారతీయ రైతులను AI-ఆధారిత అంతర్దృష్టులు, స్మార్ట్ పంట సిఫార్సులు, వాతావరణ అంచనాలు, ఏకీకృత ఎరువుల మార్కెట్‌ప్లేస్ మరియు సమగ్ర వ్యవసాయ నిర్వహణ సాధనాలతో శక్తివంతం చేయడం।",
@@ -73,7 +93,20 @@ const Index = () => {
       pestDesc: "తక్షణ కీటకాల గుర్తింపు కోసం మొక్కల చిత్రాలను అప్‌లోడ్ చేయండి",
       fertilizerShop: "ఎరువుల దుకాణం",
       fertilizerDesc: "మీ పంటలకు నాణ్యమైన ఎరువులను బ్రౌజ్ చేసి కొనుక్కోండి",
-      exploreIndia: "భారతదేశంలో వ్యవసాయాన్ని అన్వేషించండి"
+      exploreIndia: "భారతదేశంలో వ్యవసాయాన్ని అన్వేషించండి",
+      aboutUs: "AgriPlatform గురించి",
+      aboutDesc: "సాంకేతికత ద్వారా భారతీయ వ్యవసాయాన్ని మార్చడం",
+      missionTitle: "మా లక్ష్యం",
+      missionDesc: "రైతులను అత్యాధునిక సాంకేతికతతో శక్తివంతం చేయడం, వ్యవసాయాన్ని మరింత స్థిరమైన, లాభదాయకమైన మరియు సమర్థవంతంగా చేయడం।",
+      visionTitle: "మా దృష్టి",
+      visionDesc: "ప్రతి రైతుకు స్మార్ట్ వ్యవసాయ పరిష్కారాలకు అందుబాటు ఉండే డిజిటల్‌గా అనుసంధానించబడిన వ్యవసాయ పర్యావరణ వ్యవస్థను సృష్టించడం।",
+      whyChooseTitle: "AgriPlatform ను ఎందుకు ఎంచుకోవాలి?",
+      aiPowered: "AI-ఆధారిత పరిష్కారాలు",
+      aiPoweredDesc: "అధునాతన మెషిన్ లెర్నింగ్ అల్గోరిథమ్‌లు వ్యక్తిగతీకరించిన సిఫార్సులను అందిస్తాయి",
+      trusted: "వేలాది మంది విశ్వసించారు",
+      trustedDesc: "10,000+ మంది రైతులు తమ వ్యవసాయ అవసరాలకు మా ప్లాట్‌ఫారమ్‌ను విశ్వసిస్తున్నారు",
+      support: "24/7 నిపుణుల మద్దతు",
+      supportDesc: "వ్యవసాయ నిపుణులు మరియు సాంకేతిక నిపుణుల నుండి గుట్టగుట్టిన సహాయం"
     }
   };
 
@@ -81,11 +114,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Background Image with Dark Overlay - no green colors */}
+      {/* Background Image with Dark Overlay */}
       <div 
         className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat animate-fade-in"
         style={{
-          backgroundImage: `url('/lovable-uploads/fdafe80a-9b5b-4d70-adc6-27b0f4f21a9e.png')`
+          backgroundImage: `url('/lovable-uploads/2c4812fd-9034-4c57-a61e-b00898b3edcd.png')`
         }}
       >
         <div className="absolute inset-0 bg-black/70"></div>
@@ -204,6 +237,92 @@ const Index = () => {
           
           <div className="animate-fade-in">
             <CommunityForum language={language} />
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-16 bg-black/30 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 animate-fade-in">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              {currentLang.aboutUs}
+            </h2>
+            <p className="text-xl text-white/90 mb-8">
+              {currentLang.aboutDesc}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+            <div className="animate-scale-in">
+              <Card className="bg-white/10 backdrop-blur-sm border-0 text-white h-full">
+                <CardHeader>
+                  <CardTitle className="text-2xl flex items-center">
+                    <TrendingUp className="mr-3 h-8 w-8 text-blue-400" />
+                    {currentLang.missionTitle}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-white/90 text-lg">
+                    {currentLang.missionDesc}
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="animate-scale-in">
+              <Card className="bg-white/10 backdrop-blur-sm border-0 text-white h-full">
+                <CardHeader>
+                  <CardTitle className="text-2xl flex items-center">
+                    <Leaf className="mr-3 h-8 w-8 text-yellow-400" />
+                    {currentLang.visionTitle}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-white/90 text-lg">
+                    {currentLang.visionDesc}
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          <div className="text-center mb-8 animate-fade-in">
+            <h3 className="text-3xl font-bold text-white mb-8">
+              {currentLang.whyChooseTitle}
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-scale-in">
+            <Card className="bg-white/10 backdrop-blur-sm border-0 text-white text-center">
+              <CardHeader>
+                <Bot className="w-16 h-16 mx-auto text-blue-400 mb-4" />
+                <CardTitle className="text-xl">{currentLang.aiPowered}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-white/90">{currentLang.aiPoweredDesc}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/10 backdrop-blur-sm border-0 text-white text-center">
+              <CardHeader>
+                <Users className="w-16 h-16 mx-auto text-yellow-400 mb-4" />
+                <CardTitle className="text-xl">{currentLang.trusted}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-white/90">{currentLang.trustedDesc}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/10 backdrop-blur-sm border-0 text-white text-center">
+              <CardHeader>
+                <Shield className="w-16 h-16 mx-auto text-orange-400 mb-4" />
+                <CardTitle className="text-xl">{currentLang.support}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-white/90">{currentLang.supportDesc}</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
