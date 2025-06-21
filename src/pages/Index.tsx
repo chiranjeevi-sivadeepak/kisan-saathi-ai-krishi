@@ -125,27 +125,27 @@ const Index = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="bg-black/40 backdrop-blur-sm text-white py-16 animate-fade-in">
+      <section className="bg-black/40 backdrop-blur-sm text-white py-8 sm:py-12 lg:py-16 animate-fade-in">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-scale-in">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 animate-scale-in">
             🌾 {currentLang.hero}
           </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in">
+          <p className="text-lg sm:text-xl md:text-2xl mb-4 sm:mb-8 opacity-90 animate-fade-in px-4">
             {currentLang.heroDesc}
           </p>
-          <p className="text-lg mb-8 opacity-80 max-w-3xl mx-auto animate-fade-in">
+          <p className="text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 opacity-80 max-w-3xl mx-auto animate-fade-in px-4">
             {currentLang.heroSubDesc}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-scale-in px-4">
             <Link to="/ai-assistant">
-              <Button size="lg" className="bg-white text-black hover:bg-gray-100 px-8 py-3 transform hover:scale-105 transition-all duration-300">
-                <Bot className="mr-2 h-5 w-5" />
+              <Button size="lg" className="w-full sm:w-auto bg-white text-black hover:bg-gray-100 px-6 sm:px-8 py-3 text-sm sm:text-base transform hover:scale-105 transition-all duration-300 shadow-lg">
+                <Bot className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 {currentLang.tryAI}
               </Button>
             </Link>
             <Link to="/fertilizer-shop">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black px-8 py-3 transform hover:scale-105 transition-all duration-300">
-                <Store className="mr-2 h-5 w-5" />
+              <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-black px-6 sm:px-8 py-3 text-sm sm:text-base transform hover:scale-105 transition-all duration-300 shadow-lg">
+                <Store className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 {currentLang.shopFertilizers}
               </Button>
             </Link>
@@ -154,49 +154,49 @@ const Index = () => {
       </section>
 
       {/* Quick Access Cards */}
-      <section className="py-12 bg-black/20 backdrop-blur-sm">
+      <section className="py-8 sm:py-12 bg-black/20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-white animate-fade-in">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-white animate-fade-in">
             {currentLang.smartFarming}
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
             <Link to="/ai-assistant" className="animate-scale-in">
               <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer border-0 bg-gradient-to-br from-blue-50/90 to-blue-100/90 backdrop-blur-sm h-full transform hover:scale-105">
-                <CardHeader className="text-center">
-                  <Bot className="w-12 h-12 mx-auto text-blue-600 mb-4" />
-                  <CardTitle className="text-blue-800">{currentLang.aiAssistant}</CardTitle>
-                  <CardDescription>{currentLang.aiDesc}</CardDescription>
+                <CardHeader className="text-center p-4 sm:p-6">
+                  <Bot className="w-8 h-8 sm:w-12 sm:h-12 mx-auto text-blue-600 mb-2 sm:mb-4" />
+                  <CardTitle className="text-blue-800 text-sm sm:text-base">{currentLang.aiAssistant}</CardTitle>
+                  <CardDescription className="text-xs sm:text-sm">{currentLang.aiDesc}</CardDescription>
                 </CardHeader>
               </Card>
             </Link>
 
             <Link to="/crop-recommendations" className="animate-scale-in">
               <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer border-0 bg-gradient-to-br from-orange-50/90 to-orange-100/90 backdrop-blur-sm h-full transform hover:scale-105">
-                <CardHeader className="text-center">
-                  <Leaf className="w-12 h-12 mx-auto text-orange-600 mb-4" />
-                  <CardTitle className="text-orange-800">{currentLang.cropRecommendations}</CardTitle>
-                  <CardDescription>{currentLang.cropDesc}</CardDescription>
+                <CardHeader className="text-center p-4 sm:p-6">
+                  <Leaf className="w-8 h-8 sm:w-12 sm:h-12 mx-auto text-orange-600 mb-2 sm:mb-4" />
+                  <CardTitle className="text-orange-800 text-sm sm:text-base">{currentLang.cropRecommendations}</CardTitle>
+                  <CardDescription className="text-xs sm:text-sm">{currentLang.cropDesc}</CardDescription>
                 </CardHeader>
               </Card>
             </Link>
 
             <Link to="/pest-detection" className="animate-scale-in">
               <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer border-0 bg-gradient-to-br from-red-50/90 to-red-100/90 backdrop-blur-sm h-full transform hover:scale-105">
-                <CardHeader className="text-center">
-                  <Search className="w-12 h-12 mx-auto text-red-600 mb-4" />
-                  <CardTitle className="text-red-800">{currentLang.pestDetection}</CardTitle>
-                  <CardDescription>{currentLang.pestDesc}</CardDescription>
+                <CardHeader className="text-center p-4 sm:p-6">
+                  <Search className="w-8 h-8 sm:w-12 sm:h-12 mx-auto text-red-600 mb-2 sm:mb-4" />
+                  <CardTitle className="text-red-800 text-sm sm:text-base">{currentLang.pestDetection}</CardTitle>
+                  <CardDescription className="text-xs sm:text-sm">{currentLang.pestDesc}</CardDescription>
                 </CardHeader>
               </Card>
             </Link>
 
             <Link to="/fertilizer-shop" className="animate-scale-in">
               <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer border-0 bg-gradient-to-br from-purple-50/90 to-purple-100/90 backdrop-blur-sm h-full transform hover:scale-105">
-                <CardHeader className="text-center">
-                  <Store className="w-12 h-12 mx-auto text-purple-600 mb-4" />
-                  <CardTitle className="text-purple-800">{currentLang.fertilizerShop}</CardTitle>
-                  <CardDescription>{currentLang.fertilizerDesc}</CardDescription>
+                <CardHeader className="text-center p-4 sm:p-6">
+                  <Store className="w-8 h-8 sm:w-12 sm:h-12 mx-auto text-purple-600 mb-2 sm:mb-4" />
+                  <CardTitle className="text-purple-800 text-sm sm:text-base">{currentLang.fertilizerShop}</CardTitle>
+                  <CardDescription className="text-xs sm:text-sm">{currentLang.fertilizerDesc}</CardDescription>
                 </CardHeader>
               </Card>
             </Link>
@@ -205,10 +205,10 @@ const Index = () => {
       </section>
 
       {/* Interactive India Map */}
-      <section className="py-12 bg-white/10 backdrop-blur-sm">
+      <section className="py-8 sm:py-12 bg-white/10 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-8 text-white animate-fade-in">
-            <MapPin className="inline-block mr-2 h-8 w-8" />
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-white animate-fade-in">
+            <MapPin className="inline-block mr-2 h-6 w-6 sm:h-8 sm:w-8" />
             {currentLang.exploreIndia}
           </h2>
           <div className="animate-scale-in">
@@ -218,19 +218,19 @@ const Index = () => {
       </section>
 
       {/* Dashboard Components Grid */}
-      <section className="py-12 bg-black/20 backdrop-blur-sm">
+      <section className="py-8 sm:py-12 bg-black/20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 animate-fade-in">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 animate-fade-in">
             <WeatherCard language={language} />
             <MarketPrices language={language} />
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 animate-fade-in">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 animate-fade-in">
             <CropRecommendation language={language} />
             <PestDetection language={language} />
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 animate-fade-in">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 animate-fade-in">
             <WaterManagement language={language} />
             <FarmingRoadmap language={language} />
           </div>
@@ -242,28 +242,28 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-16 bg-black/30 backdrop-blur-sm">
+      <section className="py-12 sm:py-16 bg-black/30 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl font-bold text-white mb-4">
+          <div className="text-center mb-8 sm:mb-12 animate-fade-in">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               {currentLang.aboutUs}
             </h2>
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 px-4">
               {currentLang.aboutDesc}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mb-8 sm:mb-12">
             <div className="animate-scale-in">
               <Card className="bg-white/10 backdrop-blur-sm border-0 text-white h-full">
-                <CardHeader>
-                  <CardTitle className="text-2xl flex items-center">
-                    <TrendingUp className="mr-3 h-8 w-8 text-blue-400" />
+                <CardHeader className="p-4 sm:p-6">
+                  <CardTitle className="text-xl sm:text-2xl flex items-center">
+                    <TrendingUp className="mr-3 h-6 w-6 sm:h-8 sm:w-8 text-blue-400" />
                     {currentLang.missionTitle}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-white/90 text-lg">
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <p className="text-white/90 text-base sm:text-lg">
                     {currentLang.missionDesc}
                   </p>
                 </CardContent>
@@ -272,14 +272,14 @@ const Index = () => {
 
             <div className="animate-scale-in">
               <Card className="bg-white/10 backdrop-blur-sm border-0 text-white h-full">
-                <CardHeader>
-                  <CardTitle className="text-2xl flex items-center">
-                    <Leaf className="mr-3 h-8 w-8 text-yellow-400" />
+                <CardHeader className="p-4 sm:p-6">
+                  <CardTitle className="text-xl sm:text-2xl flex items-center">
+                    <Leaf className="mr-3 h-6 w-6 sm:h-8 sm:w-8 text-yellow-400" />
                     {currentLang.visionTitle}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-white/90 text-lg">
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <p className="text-white/90 text-base sm:text-lg">
                     {currentLang.visionDesc}
                   </p>
                 </CardContent>
@@ -287,40 +287,40 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="text-center mb-8 animate-fade-in">
-            <h3 className="text-3xl font-bold text-white mb-8">
+          <div className="text-center mb-6 sm:mb-8 animate-fade-in">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8">
               {currentLang.whyChooseTitle}
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-scale-in">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 animate-scale-in">
             <Card className="bg-white/10 backdrop-blur-sm border-0 text-white text-center">
-              <CardHeader>
-                <Bot className="w-16 h-16 mx-auto text-blue-400 mb-4" />
-                <CardTitle className="text-xl">{currentLang.aiPowered}</CardTitle>
+              <CardHeader className="p-4 sm:p-6">
+                <Bot className="w-12 h-12 sm:w-16 sm:h-16 mx-auto text-blue-400 mb-3 sm:mb-4" />
+                <CardTitle className="text-lg sm:text-xl">{currentLang.aiPowered}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-white/90">{currentLang.aiPoweredDesc}</p>
+              <CardContent className="p-4 sm:p-6 pt-0">
+                <p className="text-white/90 text-sm sm:text-base">{currentLang.aiPoweredDesc}</p>
               </CardContent>
             </Card>
 
             <Card className="bg-white/10 backdrop-blur-sm border-0 text-white text-center">
-              <CardHeader>
-                <Users className="w-16 h-16 mx-auto text-yellow-400 mb-4" />
-                <CardTitle className="text-xl">{currentLang.trusted}</CardTitle>
+              <CardHeader className="p-4 sm:p-6">
+                <Users className="w-12 h-12 sm:w-16 sm:h-16 mx-auto text-yellow-400 mb-3 sm:mb-4" />
+                <CardTitle className="text-lg sm:text-xl">{currentLang.trusted}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-white/90">{currentLang.trustedDesc}</p>
+              <CardContent className="p-4 sm:p-6 pt-0">
+                <p className="text-white/90 text-sm sm:text-base">{currentLang.trustedDesc}</p>
               </CardContent>
             </Card>
 
             <Card className="bg-white/10 backdrop-blur-sm border-0 text-white text-center">
-              <CardHeader>
-                <Shield className="w-16 h-16 mx-auto text-orange-400 mb-4" />
-                <CardTitle className="text-xl">{currentLang.support}</CardTitle>
+              <CardHeader className="p-4 sm:p-6">
+                <Shield className="w-12 h-12 sm:w-16 sm:h-16 mx-auto text-orange-400 mb-3 sm:mb-4" />
+                <CardTitle className="text-lg sm:text-xl">{currentLang.support}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-white/90">{currentLang.supportDesc}</p>
+              <CardContent className="p-4 sm:p-6 pt-0">
+                <p className="text-white/90 text-sm sm:text-base">{currentLang.supportDesc}</p>
               </CardContent>
             </Card>
           </div>
