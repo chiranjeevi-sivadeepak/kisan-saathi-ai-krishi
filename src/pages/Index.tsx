@@ -11,9 +11,7 @@ import IndiaMapDashboard from '@/components/IndiaMapDashboard';
 import PestDetection from '@/components/PestDetection';
 import WaterManagement from '@/components/WaterManagement';
 import FarmingRoadmap from '@/components/FarmingRoadmap';
-import Community
-
-Forum from '@/components/CommunityForum';
+import CommunityForum from '@/components/CommunityForum';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const Index = () => {
